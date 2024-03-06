@@ -81,7 +81,7 @@ a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
 speed_c = 0.2; % speed of the current
 
-vw = 1;
+vw = 0;
 beta_w = 0;
 
 flow=[a_c;b_c;speed_c];
