@@ -2,10 +2,10 @@
 clear all
 close all
 
-Data = readtable("Tito Neri - Speed to Force.xlsx");
-Port_Side_Thruster = Data(1:15,1:2);
-Starboard_Thruster = Data(19:33,1:2);
-Bowthruster = Data(38:55,1:2);
+%Data = readtable("Tito Neri - Speed to Force.xlsx");
+%Port_Side_Thruster = Data(1:15,1:2);
+%Starboard_Thruster = Data(19:33,1:2);
+%Bowthruster = Data(38:55,1:2);
 
 
 
@@ -34,7 +34,7 @@ p = 0; % roll
 q = 0; % pitch
 %r = sym('r');  % yaw
 
-V =   [v;u;r];            % Velocity vector
+V =   [u;v;r];            % Velocity vector
 eta = [x;y;Psi];          %Position vector ?
 tau = [tau_u;tau_v;tau_r]; % Force input vector
 
@@ -138,13 +138,17 @@ tau_u = T1*cos(alpha1)+T2*cos(alpha2) ;
 tau_v = T1*sin(alpha1)+T2*sin(alpha2) ;
 tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
 
+%v_c_NED = [2 0 0];
+%R = [cos(Psi) -sin(Psi) 0; sin(Psi) cos(Psi) 0; 0 0 1];
+%v_c_BOD = v_c_NED * R;
+
 
 tau = [tau_u;tau_v;tau_r];
 %Environmental Force
-tau_e = 0;
+tau_e = [0 0 0];
 %tau_e = [0;0;0];
 
-AA = tau*M^(-1);
+%AA = tau*M^(-1);
 
 % hallo
 
