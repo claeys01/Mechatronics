@@ -79,7 +79,7 @@ tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
-speed_c = 2; % speed of the current
+speed_c = 0.2; % speed of the current
 
 flow=[a_c;b_c;speed_c];
 tau = [tau_u;tau_v;tau_r];
