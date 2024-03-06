@@ -138,7 +138,10 @@ tau_u = T1*cos(alpha1)+T2*cos(alpha2) ;
 tau_v = T1*sin(alpha1)+T2*sin(alpha2) ;
 tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
 
-%v_c_NED = [2 0 0];
+%a_c = 0 % angle one of the current
+%b_c = 0 % angle two of the current
+%speed_c = 2 % speed of the current
+%v_c_NED = [speed_c*cos(a_c)*cos(b_c) speed_c*sin(b_c) speed_c*sin(a_c)*cos(b_c)];
 %R = [cos(Psi) -sin(Psi) 0; sin(Psi) cos(Psi) 0; 0 0 1];
 %v_c_BOD = v_c_NED * R;
 
