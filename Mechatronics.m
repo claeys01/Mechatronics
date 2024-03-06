@@ -129,13 +129,13 @@ starboardthruster = 1E-09*rpm^3 + 2E-07*rpm^2 + 0.0004*rpm - 0.0368;
 R_t = -(4.7278*u^3 +6.4285*u^2+0.2249*u -0.0049);
 R_tast= 1.1*R_t ;
 
-T1=1; % fixed for now
-T2=1;
-Tb=0;
+T1=0; % fixed for now
+T2=0;
+Tb=1;
 alpha1= 0 ; %recht naar achteren
 alpha2= 0 ; %recht naar achteren
 tau_u = T1*cos(alpha1)+T2*cos(alpha2) ;
-tau_v = T1*sin(alpha1)+T2*sin(alpha2) ;
+tau_v = T1*sin(alpha1)+T2*sin(alpha2)+Tb ;
 tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
