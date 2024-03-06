@@ -129,9 +129,9 @@ starboardthruster = 1E-09*rpm^3 + 2E-07*rpm^2 + 0.0004*rpm - 0.0368;
 R_t = -(4.7278*u^3 +6.4285*u^2+0.2249*u -0.0049);
 R_tast= 1.1*R_t ;
 
-T1=2; % fixed for now
-T2=4;
-Tb=4;
+T1=1; % fixed for now
+T2=1;
+Tb=0;
 alpha1= 0 ; %recht naar achteren
 alpha2= 0 ; %recht naar achteren
 tau_u = T1*cos(alpha1)+T2*cos(alpha2) ;
