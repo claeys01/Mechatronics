@@ -68,8 +68,8 @@ M = M_a + M_rb;
 
 
 
-T1=1; % fixed for now
-T2=1;
+T1=0.5; % fixed for now
+T2=0.5;
 Tb=0;
 alpha1= 0 ; %recht naar achteren
 alpha2= 0 ; %recht naar achteren
