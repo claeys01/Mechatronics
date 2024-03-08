@@ -68,8 +68,8 @@ M = M_a + M_rb;
 
 
 
-T1=0.5; % fixed for now
-T2=0.5;
+T1=1; % fixed for now
+T2=1;
 Tb=0;
 alpha1= 0 ; %recht naar achteren
 alpha2= 0 ; %recht naar achteren
@@ -80,7 +80,7 @@ tau_r = T1*cos(alpha1)*0.065 - T1*sin(alpha1)*0.35 - T2*cos(alpha2)*0.065 + T2*s
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
-speed_c = 0.2; % speed of the current
+speed_c = 0.6; % speed of the current
 
 vw = 0;
 beta_w = 0;
