@@ -68,18 +68,22 @@ M = M_a + M_rb;
 
 
 
-T1=1; % fixed for now
-T2=1;
+T1=0.5; % fixed for now
+T2=0.5;
 Tb=0;
 alpha1= 0 ; %recht naar achteren
 alpha2= 0 ; %recht naar achteren
 tau_u = T1*cos(alpha1)+T2*cos(alpha2) ;
 tau_v = T1*sin(alpha1)+T2*sin(alpha2)+Tb ;
-tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
+%tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
+tau_r = T1*cos(alpha1)*0.065 - T1*sin(alpha1)*0.35 - T2*cos(alpha2)*0.065 + T2*sin(alpha2)*0.35+Tb*0.35;
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
-speed_c = 2; % speed of the current
+speed_c = 0.2; % speed of the current
+
+vw = 0;
+beta_w = 0;
 
 flow=[a_c;b_c;speed_c];
 tau = [tau_u;tau_v;tau_r];
