@@ -78,6 +78,8 @@ tau_v = T1*sin(alpha1)+T2*sin(alpha2)+Tb ;
 %tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
 tau_r = T1*cos(alpha1)*0.065 - T1*sin(alpha1)*0.35 - T2*cos(alpha2)*0.065 + T2*sin(alpha2)*0.35+Tb*0.35;
 
+T_all = [1 0 0; 0 1 1; -Aft_Thrust_TCG -Aft_Thrust_LCG Aft_Thrust_LCG];
+
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
 speed_c = 0.6; % speed of the current
