@@ -1,4 +1,2 @@
 # Mechatronics
-Deze repo is de "sandbox" voor het mechatronics project te kunnen tracken hallo test
-
-gekke shit
+This repository contains the simulunk model for the tito neri ship of the Mechatronics project
