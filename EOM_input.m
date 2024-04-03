@@ -20,10 +20,8 @@ Aft_Thrust_LCG = -0.35; % Aft Thruster LCG (w.r.t COG)
 Aft_Thrust_TCG = 0.065; % Aft Thruster TCG (port)
 
 
-
-
-
 % System Inertia matrix
+
 rho = 1000; %Water Density (not sure if 1000)
 x_g = 0;
 y_g = 0;
@@ -52,13 +50,15 @@ N_dotq = 0;
 N_dotr = 2.3; 
 
 
-
 % Added Mass
+
 M_a = -[X_dotu,X_dotv,X_dotr;
        Y_dotu, Y_dotv, Y_dotr;
        N_dotu,N_dotv,N_dotr];
 
+
 % Rigid Body inertia
+
 M_rb = [m,0,-m*y_g;
        0,m, m*x_g ;
        -m*y_g, m*x_g, I_z];
@@ -66,7 +66,7 @@ M_rb = [m,0,-m*y_g;
 M = M_a + M_rb;
 
 
-
+%Trust
 
 T1=1; % fixed for now
 T2=1;
@@ -78,17 +78,50 @@ tau_v = T1*sin(alpha1)+T2*sin(alpha2)+Tb ;
 %tau_r = -T1*cos(alpha1)*0.065+T2*cos(alpha1)*0.35+T2*cos(alpha2)-T2*sin(alpha2)+Tb*0.35;
 tau_r = T1*cos(alpha1)*0.065 - T1*sin(alpha1)*0.35 - T2*cos(alpha2)*0.065 + T2*sin(alpha2)*0.35+Tb*0.35;
 
+
+%Trust allocation matrix
+
 T_all = [1 0 0; 0 1 1; -Aft_Thrust_TCG -Aft_Thrust_LCG Aft_Thrust_LCG];
+
+
+%Current
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
 speed_c = 0.6; % speed of the current
+flow=[a_c;b_c;speed_c];
+tau = [tau_u;tau_v;tau_r];
+
+%Wind
 
 vw = 0;
 beta_w = 0;
 
-flow=[a_c;b_c;speed_c];
-tau = [tau_u;tau_v;tau_r];
+
 %Environmental Force
+
 tau_e = [0; 0; 0];
+
+
+%DC data
+
+Ea=12;
+Ia=9;
+wm=564.9;
+wm0=666.6;
+istall=54;
+Ra=0.22680;
+La=0.28;
+Kt=1.7629*10^-2;
+Kb=1.7629*10^-2;
+Jm=6.24*10^-4;
+CM=2.909*10^-5;
+ia0=1.1;
+Trat=Ia*Kt;
+
+%pid values
+
+Kp=1;
+Kl=1;
+Kd=1;
 
