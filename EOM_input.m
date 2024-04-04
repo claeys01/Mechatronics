@@ -125,3 +125,11 @@ Kp=1;
 Kl=1;
 Kd=1;
 
+%start position
+
+eta_start_local = [0,0,0];
+
+%requested position
+
+eta_req_global = [1,0,0];
+
