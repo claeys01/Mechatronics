@@ -86,9 +86,9 @@ T_all = [1 0 0; 0 1 1; -Aft_Thrust_TCG -Aft_Thrust_LCG Aft_Thrust_LCG];
 
 %Debug trust
 
-tau_u = 0;
+tau_u = 0.2;
 tau_v = 0.2;
-tau_r = -tau_v*0.35;
+tau_r = 0;
 
 
 %Current
@@ -136,9 +136,9 @@ Kd=1;
 
 %start position
 
-eta_start_local = [0,0,0];
+eta_start_local = [1,0,0];
 
 %requested position
 
-eta_req_global = [1,0,0];
+eta_req_global = [0,0,0];
 
