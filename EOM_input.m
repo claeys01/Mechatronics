@@ -93,7 +93,7 @@ tau_r = 0;
 
 %Current
 
-current_magnitude_percentage = 7; % a percentage that gives the current speed in percentage of the mx speed
+current_magnitude_percentage = 0; % a percentage that gives the current speed in percentage of the mx speed
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
@@ -136,9 +136,9 @@ Kd=1;
 
 %start position
 
-eta_start_local = [1,0,pi/6];
+eta_start_local = [0,0,0];
 
 %requested position
 
-eta_req_global = [0,0,0];
+eta_req_global = [2.5,0,0];
 
