@@ -140,5 +140,5 @@ eta_start_local = [0,0,0];
 
 %requested position
 
-eta_req_global = [1,0,pi/2];
+eta_req_global = [1,0,0];
 
