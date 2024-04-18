@@ -89,17 +89,17 @@ T_all = [1 0 0; 0 1 1; -Aft_Thrust_TCG -Aft_Thrust_LCG Aft_Thrust_LCG];
 tau_u = 0;
 tau_v = 0;
 tau_r = 0;
-
+tau = [tau_u;tau_v;tau_r];
 
 %Current
 
-current_magnitude_percentage = 18; % a percentage that gives the current speed in percentage of the mx speed
+current_magnitude_percentage = 14; % a percentage that gives the current speed in percentage of the mx speed
 
 a_c = 0; % angle one of the current in our case (2D) this stays 0
 b_c = 0; % angle two of the current can be changed in 2D plane
 speed_c = 1.5; % max speed of the current
 flow=[a_c;b_c;speed_c];
-tau = [tau_u;tau_v;tau_r];
+
 
 %Wind
 
@@ -140,5 +140,5 @@ eta_start_local = [0,0,0];
 
 %requested position
 
-eta_req_global = [1,0,0];
+eta_req_global = [1,0,pi/2];
 
